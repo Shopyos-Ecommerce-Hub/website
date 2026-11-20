@@ -1,4 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Delete Account — Shopyos"><section class="page-hero"><div class="mx-auto w-[min(900px,calc(100%-40px))]"><p class="eyebrow">Account support</p><h1 class="mt-4 text-5xl font-extrabold tracking-tight text-navy">Request account deletion.</h1><p class="mt-4 text-lg text-muted">You can request deletion of your Shopyos account through the app or by contacting support.</p><a class="btn mt-8" href="mailto:hello@shopyos.com?subject=Account%20deletion%20request">Contact support</a></div></section></BaseLayout>
+
+<BaseLayout title="Delete Account — Shopyos">
+  <section class="page-hero">
+    <div class="mx-auto w-[min(900px,calc(100%-40px))]">
+      <p class="eyebrow">Account support</p>
+      <h1 class="mt-4 max-w-3xl text-5xl font-extrabold tracking-tight text-navy">Request account deletion.</h1>
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">You can request deletion of your Shopyos account through the app or by contacting support.</p>
+      <a class="btn mt-8" href="mailto:hello@shopyos.com?subject=Account%20deletion%20request">Contact support</a>
+    </div>
+  </section>
+  <section class="py-12 md:py-16">
+    <div class="mx-auto grid w-[min(900px,calc(100%-40px))] gap-6 sm:grid-cols-2">
+      <article class="border-t border-slate-300 pt-5">
+        <h2 class="text-xl font-bold text-navy">Your data and privacy</h2>
+        <p class="mt-3 leading-relaxed text-muted">Read how Shopyos handles account information and deletion requests in the privacy policy.</p>
+        <a class="mt-4 inline-flex min-h-11 items-center font-bold text-navy underline decoration-lime decoration-2 underline-offset-4" href="/privacy">Read the privacy policy</a>
+      </article>
+      <article class="border-t border-slate-300 pt-5">
+        <h2 class="text-xl font-bold text-navy">Need another answer?</h2>
+        <p class="mt-3 leading-relaxed text-muted">Find answers to common account, support and marketplace questions.</p>
+        <a class="mt-4 inline-flex min-h-11 items-center font-bold text-navy underline decoration-lime decoration-2 underline-offset-4" href="/faq">Visit the FAQ</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

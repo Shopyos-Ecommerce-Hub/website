@@ -7,21 +7,18 @@ const partnerTracks = [
     badge: 'Storefront & Volume',
     description: 'Digitize your entire inventory, connect multiple outlets, and reach shoppers seeking instant local delivery in your cities.',
     features: ['Centralized catalog management', 'Multi-branch stock sync', 'Real-time local order dispatch'],
-    icon: '🏬',
   },
   {
     title: 'Wholesale Suppliers & Distributors',
     badge: 'B2B Distribution',
     description: 'Supply verified retail shops and informal traders across Ghana with streamlined bulk order management and reliable payments.',
     features: ['Direct access to retail merchants', 'Bulk volume purchasing flows', 'Predictable restocking channels'],
-    icon: '📦',
   },
   {
     title: 'Logistics & Fleet Operators',
     badge: 'Fulfillment & Fleet',
     description: 'Plug your motorbikes, vans, or courier fleet directly into Shopyos automated routing engine to power on-demand deliveries.',
     features: ['Automated delivery assignment', 'Live GPS route tracking', 'Prompt delivery settlement'],
-    icon: '🛵',
   },
 ];
 
@@ -76,7 +73,7 @@ const benefits = [
     <div class="mx-auto w-[min(1120px,calc(100%-40px))]">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {benefits.map((b) => (
-          <div class="rounded-xl border border-slate-200/80 bg-white p-6 shadow-xs">
+          <div class="border-t border-slate-300 pt-5">
             <div class="h-2 w-10 rounded-full bg-lime"></div>
             <h2 class="mt-4 text-lg font-bold text-navy">{b.title}</h2>
             <p class="mt-2 text-sm leading-relaxed text-muted">{b.description}</p>
@@ -101,10 +98,10 @@ const benefits = [
 
       <div class="mt-12 grid gap-6 md:grid-cols-2">
         {partnerTracks.map((track) => (
-          <article class="card flex flex-col justify-between transition-all hover:border-lime/60 hover:shadow-md">
+          <article class="card flex flex-col justify-between transition-colors hover:border-lime/60">
             <div>
               <div class="flex items-center justify-between gap-4">
-                <span class="text-4xl">{track.icon}</span>
+                <span aria-hidden="true" class="block h-1 w-10 rounded-full bg-lime"></span>
                 <span class="rounded-full bg-[#eff7e4] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#4d7c0f]">
                   {track.badge}
                 </span>
@@ -115,7 +112,7 @@ const benefits = [
               <ul class="mt-6 space-y-2 border-t border-slate-100 pt-5">
                 {track.features.map((feat) => (
                   <li class="flex items-center gap-2.5 text-sm font-medium text-navy">
-                    <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-lime/20 text-xs font-bold text-[#4d7c0f]">✓</span>
+                    <svg aria-hidden="true" viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-lime-700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 10 4 4 8-8"/></svg>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -173,14 +170,14 @@ const benefits = [
         <div class="mt-8 text-sm text-slate-300">
           <p>Prefer direct conversation?</p>
           <p class="mt-2 flex flex-wrap gap-4 font-semibold text-white">
-            <a href="tel:+233506514687" class="transition hover:text-lime">📞 +233 50 651 4687</a>
-            <a href="https://wa.me/233506514687" class="transition hover:text-lime">💬 WhatsApp</a>
-            <a href="mailto:admin@shopyosgh.com" class="transition hover:text-lime">✉️ admin@shopyosgh.com</a>
+            <a href="tel:+233506514687" class="transition hover:text-lime">Call +233 50 651 4687</a>
+            <a href="https://wa.me/233506514687" class="transition hover:text-lime">WhatsApp</a>
+            <a href="mailto:admin@shopyosgh.com" class="transition hover:text-lime">Email admin@shopyosgh.com</a>
           </p>
         </div>
       </div>
 
-      <div class="rounded-3xl border border-white/10 bg-white p-8 text-navy shadow-2xl md:p-10">
+      <div class="rounded-2xl bg-white p-6 text-navy md:p-10">
         <h3 class="text-2xl font-extrabold text-navy">Partner Application</h3>
         <p class="mt-1 text-sm text-muted">Complete the form below to initiate your partnership with Shopyos.</p>
 
@@ -193,6 +190,7 @@ const benefits = [
               id="business-name"
               name="business_name"
               required
+                autocomplete="organization"
               placeholder="e.g. Acme Wholesale Ltd"
               class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
             />
@@ -207,8 +205,9 @@ const benefits = [
                 id="contact-name"
                 name="contact_person"
                 required
+                autocomplete="name"
                 placeholder="Full Name"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               />
             </div>
             <div>
@@ -219,7 +218,7 @@ const benefits = [
                 id="contact-role"
                 name="role"
                 placeholder="e.g. Managing Director, Sales Lead"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               />
             </div>
           </div>
@@ -234,8 +233,9 @@ const benefits = [
                 type="email"
                 name="email"
                 required
+                autocomplete="email"
                 placeholder="you@company.com"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               />
             </div>
             <div>
@@ -244,10 +244,12 @@ const benefits = [
               </label>
               <input
                 id="business-phone"
+                type="tel"
                 name="phone"
                 required
+                autocomplete="tel"
                 placeholder="+233 XX XXX XXXX"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               />
             </div>
           </div>
@@ -260,7 +262,8 @@ const benefits = [
               <select
                 id="partner-type"
                 name="partnership_type"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                required
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               >
                 <option>Multi-Store Retail Merchant</option>
                 <option>Wholesale & Bulk Distributor</option>
@@ -278,8 +281,9 @@ const benefits = [
                 id="business-location"
                 name="location"
                 required
+                autocomplete="address-level2"
                 placeholder="e.g. Kumasi, Greater Accra"
-                class="mt-1.5 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/10"
+                class="mt-1.5 min-h-12 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm transition focus:border-navy focus:ring-2 focus:ring-navy/10"
               />
             </div>
           </div>
@@ -297,8 +301,8 @@ const benefits = [
             ></textarea>
           </div>
 
-          <button class="btn mt-2 w-full py-4 text-base shadow-md transition hover:scale-[1.01]" type="submit">
-            Partner with us now
+          <button class="btn mt-2 min-h-12 w-full text-base sm:w-auto" type="submit">
+            Continue in email app
           </button>
           <p class="text-center text-xs text-muted">
             Submitting opens your email app with your partner inquiry formatted for rapid dispatch.
