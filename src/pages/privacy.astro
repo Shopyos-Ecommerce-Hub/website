@@ -120,14 +120,14 @@ const sections = [
     </div>
   </section>
 
-  <section class="bg-[#f8fafb] py-16">
-    <div class="mx-auto grid w-[min(960px,calc(100%-40px))] gap-6">
-      <article class="rounded-3xl bg-white p-6 shadow-sm md:p-8">
+  <section class="bg-[#f8fafb] py-12 md:py-16">
+    <div class="legal-content mx-auto grid w-[min(760px,calc(100%-40px))] gap-0">
+      <article>
         <p class="text-lg leading-relaxed text-slate-600">Shopyos ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Shopyos mobile application and related services.</p>
       </article>
 
       {sections.map((section) => (
-        <article class="rounded-3xl bg-white p-6 shadow-sm md:p-8">
+        <article>
           <h2 class="text-2xl font-extrabold tracking-[-.02em] text-navy">{section.title}</h2>
           {section.intro && <p class="mt-4 leading-relaxed text-slate-600">{section.intro}</p>}
           <ul class="mt-5 grid gap-3 text-slate-600">
@@ -138,7 +138,7 @@ const sections = [
         </article>
       ))}
 
-      <article class="rounded-3xl bg-navy p-6 text-white shadow-sm md:p-8">
+      <article class="legal-contact">
         <h2 class="text-2xl font-extrabold tracking-[-.02em]">11. Contact Us</h2>
         <p class="mt-4 max-w-2xl leading-relaxed text-slate-200">If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us.</p>
         <div class="mt-6 grid gap-3 text-slate-200">

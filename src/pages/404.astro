@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found — Shopyos">
+  <section class="page-hero min-h-[55vh]">
+    <div class="mx-auto flex w-[min(900px,calc(100%-40px))] flex-col justify-center">
+      <p class="eyebrow">404 · Page not found</p>
+      <h1 class="mt-4 max-w-3xl text-5xl font-extrabold tracking-tight text-navy md:text-7xl">We can’t find that page.</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">The link may be old or the address may be mistyped. Choose a path back into Shopyos.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="btn" href="/">Back to Shopyos home</a>
+        <a class="btn-dark" href="/buyers">Explore shopping</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

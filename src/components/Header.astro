@@ -6,6 +6,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/buyers', label: 'Buyers' },
   { href: '/sellers', label: 'Sellers' },
+  { href: '/drivers', label: 'Drivers' },
   { href: '/partners', label: 'Partners' },
   { href: '/features', label: 'Features' },
   { href: '/faq', label: 'FAQ' },
@@ -25,13 +26,14 @@ const isActive = (href) => (href === '/' ? currentPath === '/' : currentPath.sta
         class="h-8 w-auto object-contain sm:h-9 md:h-11"
       />
     </a>
-    <nav class="hidden items-center gap-7 text-sm font-bold text-navy md:flex">
+    <nav class="hidden items-center gap-4 text-sm font-bold text-navy lg:flex">
       {navLinks.map((link) => (
         <a
           href={link.href}
+          aria-current={isActive(link.href) ? 'page' : undefined}
           class:list={[
-            'group relative inline-block py-1 transition hover:text-lime',
-            { 'text-lime': isActive(link.href) },
+            'group relative inline-block py-2 transition hover:text-lime-700',
+            { 'text-navy': isActive(link.href) },
           ]}
         >
           {link.label}
@@ -44,30 +46,31 @@ const isActive = (href) => (href === '/' ? currentPath === '/' : currentPath.sta
         </a>
       ))}
     </nav>
-    <a class="btn hidden rounded-full px-5 py-3 text-sm text-white md:inline-flex" href="/contact">Contact us</a>
-    <details class="group relative md:hidden">
-      <summary class="relative z-10 flex h-11 w-11 cursor-pointer list-none items-center justify-center text-navy transition hover:text-lime" aria-label="Open navigation menu">
+    <a class="btn hidden rounded-full px-5 py-3 text-sm lg:inline-flex" href="/contact">Contact us</a>
+    <details class="group relative lg:hidden">
+      <summary class="relative z-10 flex h-11 w-11 cursor-pointer list-none items-center justify-center text-navy transition hover:text-lime" aria-label="Toggle navigation menu">
         <span class="grid gap-1.5">
           <span class="block h-0.5 w-5 rounded-full bg-current transition group-open:translate-y-2 group-open:rotate-45"></span>
           <span class="block h-0.5 w-5 rounded-full bg-current transition group-open:opacity-0"></span>
           <span class="block h-0.5 w-5 rounded-full bg-current transition group-open:-translate-y-2 group-open:-rotate-45"></span>
         </span>
       </summary>
-      <nav class="fixed inset-x-0 top-16 z-30 hidden h-[calc(100vh-4rem)] flex-col gap-1 overflow-y-auto bg-white p-6 text-lg font-bold text-navy group-open:flex group-open:animate-[mobile-nav-in_0.35s_ease-out]">
+      <nav class="fixed inset-x-0 top-16 z-30 hidden h-[calc(100vh-4rem)] flex-col gap-1 overflow-y-auto bg-white p-6 text-lg font-bold text-navy group-open:flex group-open:animate-[mobile-nav-in_0.35s_ease-out] lg:top-20 lg:h-[calc(100vh-5rem)]">
         {navLinks.map((link, i) => (
           <a
             href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
             style={`animation-delay:${i * 50}ms`}
             class:list={[
-              'rounded-2xl px-4 py-4 transition hover:bg-[#eef7e4] group-open:animate-[mobile-link-in_0.4s_ease-out_backwards]',
-              { 'bg-[#eef7e4] text-lime': isActive(link.href) },
+              'min-h-11 rounded-2xl px-4 py-3 transition hover:bg-[#eef7e4] group-open:animate-[mobile-link-in_0.4s_ease-out_backwards]',
+              { 'bg-[#eef7e4] text-navy': isActive(link.href) },
             ]}
           >
             {link.label}
           </a>
         ))}
         <a
-          class="mt-4 block rounded-full bg-lime px-4 py-4 text-center text-white transition hover:brightness-95 group-open:animate-[mobile-link-in_0.4s_ease-out_backwards]"
+          class="mt-4 block min-h-11 rounded-full bg-lime px-4 py-3 text-center font-extrabold text-navy transition hover:brightness-95 group-open:animate-[mobile-link-in_0.4s_ease-out_backwards]"
           style={`animation-delay:${navLinks.length * 50}ms`}
           href="/contact"
         >
